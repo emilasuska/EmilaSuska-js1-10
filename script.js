@@ -42,8 +42,11 @@ function string_times(m, n) {
     return name;
 }
 
-
-
 //JavaScript Problem #4 Front Times
-//function front_times(m, n)
+function front_times(m, n) {
+    var word = m;
+    if (m > 3) {
+
+    }
+}
 
