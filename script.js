@@ -30,23 +30,97 @@ function monkey_trouble(a, b) {
 }
 
 //JavaScript Problem #3 String Times
-function string_times(m, n) {
-    var name = m;
-    if (m > 0) {
-        for(var n; n - 1 > 0; n--) {
-            name = name + m;
-            }
-    } else {
-            name = "";
-        }
-    return name;
+function string_times(string, repetitions) {
+    var result = "";
+    for (var i = 0; i < repetitions; ++i) {
+        result = result + string;
+    }
+    return result;
 }
 
 //JavaScript Problem #4 Front Times
 function front_times(m, n) {
-    var word = m;
-    if (m > 3) {
+    return string_times(m.substring(0, 3), n);
+}
 
+//JavaScript Problem #5 String Bits
+function string_bits(string) {
+    var result = "";
+    for (var i = 0; i < string.length; i += 2) {
+        result = result + string.substring(i, i + 1);
+    }
+    return result;
+}
+
+//JavaScript Problem #6 Caught Speeding
+function caughtSpeeding(speed, isMyBirthday) {
+    if (isMyBirthday) {
+        speed -= 5;
+    }
+    if (speed <= 60) {
+        return 0;
+    }
+    if (speed <= 80) {
+        return 1;
+    }
+    return 2;
+}
+
+//JavaScript Problem #7 Fizz Buzz
+function fizzBuzz(number) {
+    if (number % 3 == 0) {
+        if (number % 5 == 0) {
+            number = "FizzBuzz"
+        } else {
+            number = "Fizz"
+        }
+    } else if (number % 5 == 0) {
+        number = "Buzz"
+    }
+    return number + "!";
+}
+
+//JavaScript Problem #8 Tea Party
+function teaParty(tea, candy) {
+    if (tea >= candy * 2 || candy >= tea * 2) {
+        return 2;
+    }
+    if (tea >= 5 && candy >= 5) {
+        return 1;
+    } else {
+        return 0;
     }
 }
 
+//JavaScript Problem #9 Black Jack
+function blackJack(x, y) {
+    if (x > 21) {
+        x = 0;
+    }
+    if (y > 21) {
+        y = 0;
+    }
+    if (x > y) {
+        return x;
+    } else {
+        return y;
+    }
+}
+
+//JavaScript Problem #10 Lone Sum
+function loneSum(a, b, c) {
+    if (a == b) {
+        if (c == a) {
+            return 0;
+        }
+        return c;
+    }
+    if (a == c) {
+        return b;
+    }
+    if (b == c) {
+        return a;
+    } else {
+        return a + b + c;
+    }
+}
