@@ -40,7 +40,12 @@ function string_times(string, repetitions) {
 
 //JavaScript Problem #4 Front Times
 function front_times(m, n) {
-    return string_times(m.substring(0, 3), n);
+    m = m.substring(0, 3);
+    var result = "";
+    for (var i = 0; i < n; ++i) {
+        result = result + m;
+    }
+    return result;
 }
 
 //JavaScript Problem #5 String Bits
@@ -67,33 +72,32 @@ function caughtSpeeding(speed, isMyBirthday) {
 }
 
 //JavaScript Problem #7 Fizz Buzz
-function fizzBuzz(number) {
+function fizz_buzz(number) {
     if (number % 3 == 0) {
         if (number % 5 == 0) {
-            number = "FizzBuzz"
+            return "FizzBuzz";
         } else {
-            number = "Fizz"
+            return "Fizz";
         }
     } else if (number % 5 == 0) {
-        number = "Buzz"
+        return "Buzz";
     }
     return number + "!";
 }
 
 //JavaScript Problem #8 Tea Party
 function teaParty(tea, candy) {
+    if (tea < 5 || candy < 5) {
+        return 0;
+    }
     if (tea >= candy * 2 || candy >= tea * 2) {
         return 2;
     }
-    if (tea >= 5 && candy >= 5) {
-        return 1;
-    } else {
-        return 0;
-    }
+    return 1;
 }
 
 //JavaScript Problem #9 Black Jack
-function blackJack(x, y) {
+function blackjack(x, y) {
     if (x > 21) {
         x = 0;
     }
